@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #fafafa;
+}
+
+head {
+    background-image: url('image-hero-mobile.jpg');
+    background-size: cover;
+    height: 250px;
+}
+    
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container__menu {
+    overflow: hidden;
+
+    position: relative;
+}
+
+.container__title {
+    /* position: fixed; */
+    /* float: left; */
+    padding-top: 10px;
+    font-size: 2em;
+}
+.container__image{
+    /* position: relative; */
+    background-image: url('/image-hero-mobile.jpg');  
+    background-size: cover;
+    background-repeat: no-repeat;    
+    min-height: 250px;
+}
+
+/* MAIN */
+
+main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display:flex;
+    justify-content: center;
+    width: 80%;
+    padding:3em;
+}
+
+.main__card-primary {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    background-color: white;
+}
+
+.main__card-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    background-color: rgb(177, 177, 177);
+}
+
+.logo {
+    float: ;   
+    position: relative;
+}
+
+.icon__bookmark {
+    width: 2em;
+}
+
+#menu-bar{
+    display: none;
+}
+
+header label{
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.container_menu-hamburguer{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(201, 201, 199, 0.9);
+    /*el efecto transition es para hacer una transición para que el menú desaparezca cuando cliquemos
+    al icono y lo que hace que se mueva es la opción transform que le damos el-100% en la variable x
+    para que desaparezca en ese sentido */
+    transition: all 0.5s;
+    transform: translateY(-100%);
+}
+
+/*el display:block es para que la lista del menú salga en bloque*/
+.container_menu-hamburguer li{
+    display: block; 
+    color: rgb(255, 255, 255);
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.3);   
+
+}
+.container_menu-hamburguer li:hover{
+    background: rgb(255, 255, 255, 0.3);
+}
+
+p{
+    text-align: left;
+}
+
+/*para hacer aparecer el menú de nuevo cuando tenga el checked del icono con el símbolo ~ va a 
+seleccionar al menú y le damos un transform de X a 0 para que vuelva a aparecer en su posición
+original */
+#menu-bar:checked ~ .container_menu-hamburguer{
+    transform: translateY(0);
+}
+
+/*parte responsive*/
+/*para hacer que el menú aparezca en la parte derecha y estático cuando es pantalla pc*/
+@media (min-width:1024px){
+    .container_menu-hamburguer{
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateY(0%);
+        float: right;
+        display: flex;
+    }
+    .container_menu-hamburguer li{
+        border: none;
+    }
+    header label{
+        display: none;
+    }
+
+}
+
+
+
